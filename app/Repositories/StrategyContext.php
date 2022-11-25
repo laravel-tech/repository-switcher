@@ -50,9 +50,9 @@ class StrategyContext
         $this->repository($repository);
     }
 
-    public function __call(string $name, array $arguments)
+    public function __call(string $model, array $arguments)
     {
         $repository = app($this->repository, [$this->dql]);
-        return $repository->$name();
+        return $repository->$model(...$arguments);
     }
 }
