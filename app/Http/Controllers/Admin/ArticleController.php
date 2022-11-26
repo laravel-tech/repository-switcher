@@ -57,7 +57,7 @@ class ArticleController extends Controller
      */
     public function show(string $slug)
     {
-        return $this->strategy->eloquent()->show($slug);
+        return $this->strategy->eloquent()->findBySlug($slug);
     }
 
     /**
