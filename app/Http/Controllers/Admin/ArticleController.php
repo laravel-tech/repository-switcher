@@ -46,7 +46,7 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        //
+        return $this->strategy->eloquent()->create($request->validated());
     }
 
     /**
