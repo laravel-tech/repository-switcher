@@ -81,7 +81,7 @@ class ArticleController extends Controller
      */
     public function update(ArticleRequest $request, $id)
     {
-        //
+        return $this->strategy->eloquent()->update($id, $request->validated());
     }
 
     /**
@@ -92,6 +92,6 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->strategy->eloquent()->destroy($id);
     }
 }
