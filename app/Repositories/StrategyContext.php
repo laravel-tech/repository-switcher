@@ -14,7 +14,8 @@ class StrategyContext
 
     public function setDql($dql)
     {
-        if(!in_array($dql, ['eloquent', 'Eloquent', 'querybuilder', 'QueryBuilder'])) {
+        $dql = strtolower($dql);
+        if(!in_array($dql, ['eloquent', 'Eloquent'])) {
             throw new \TypeError('The DQL must be one of eloquent or querybuilder.');
         }
         $this->dql = $dql;

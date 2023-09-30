@@ -18,12 +18,14 @@ class ArticleController extends Controller
 
     /**
      * Display a listing of the resource.
+     * You can get a list of data using one of the following ways:
+     * return $this->strategy->querybuilder()->list();
+     * return $this->strategy->eloquent()->list();
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-//        return $this->strategy->querybuilder()->list();
         return $this->strategy->eloquent()->list();
     }
 
